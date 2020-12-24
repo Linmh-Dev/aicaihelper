@@ -18,12 +18,12 @@
             android:layout_height="wrap_content"
             android:text="用户ID："
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/textViewColor"
             android:padding="5dp"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/ed_view"
+            android:background="@drawable/fram"
             android:id="@+id/ed_userId" />
     </LinearLayout>
 
@@ -38,13 +38,13 @@
             android:layout_height="wrap_content"
             android:text="用户名："
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/textViewColor"
             android:padding="5dp"/>
 
         <EditText
             android:id="@+id/ed_userName"
             android:layout_width="match_parent"
-            android:background="@drawable/ed_view"
+            android:background="@drawable/fram"
             android:layout_height="30dp"
             android:padding="5dp" />
     </LinearLayout>
@@ -60,13 +60,13 @@
             android:layout_height="wrap_content"
             android:text="Cookie："
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/textViewColor"
             android:padding="5dp"/>
 
         <EditText
             android:id="@+id/ed_cookie"
             android:layout_width="match_parent"
-            android:background="@drawable/ed_view"
+            android:background="@drawable/fram"
             android:layout_height="200dp"
             android:padding="5dp" />
     </LinearLayout>
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:text="模式："
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/textViewColor"
             android:padding="5dp"/>
 
         <RadioGroup
@@ -113,7 +113,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="混打" />
+                android:text="前后" />
 
         </RadioGroup>
 
@@ -131,13 +131,13 @@
             android:layout_height="wrap_content"
             android:text="限定余额："
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/textViewColor"
             android:padding="5dp"/>
 
         <EditText
             android:id="@+id/ed_moneyy"
             android:layout_width="match_parent"
-            android:background="@drawable/ed_view"
+            android:background="@drawable/fram"
             android:layout_height="30dp"
             android:padding="5dp" />
     </LinearLayout>

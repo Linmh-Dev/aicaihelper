@@ -17,10 +17,19 @@ public class DatabaseUtils {
         edit.putString(key, value);
         edit.apply();
     }
+    public static void save(String key, boolean value) {
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putBoolean(key, value);
+        edit.apply();
+    }
 
     public static String getString(String key) {
         String string = sharedPreferences.getString(key, "");
         return string;
+    }
+   public static boolean getBoolean(String key) {
+        boolean b = sharedPreferences.getBoolean(key, false);
+        return b;
     }
 
 

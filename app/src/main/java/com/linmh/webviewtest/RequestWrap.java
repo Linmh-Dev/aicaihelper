@@ -31,7 +31,19 @@ public class RequestWrap {
         return json;
     }
 
+    public static String getBodyFast( String money, String codes) {
+        String json = "{\"accountId\":" + UserInfo.getId()
+                + ",\"clientTime\":" + System.currentTimeMillis()
+                + ",\"gameId\":\"K3MMC\",\"item\":[\"{\\\"methodid\\\":\\\"K3002001001\\\",\\\"nums\\\":1,\\\"rebate\\\":\\\"0.00\\\",\\\"times\\\":\\\"" + money
+                + "\\\",\\\"money\\\":" + money
+                + ",\\\"mode\\\":1,\\\"codes\\\":\\\"" + codes
+                + "\\\",\\\"playId\\\":[\\\"K3002001010\\\"]}\"],\"encryKey\":\"1608374527545602424746742315\",\"encryValue\":\"a057db95a00a4e9de24921813978d97d\"}";
+        Log.e("aaa", json);
+        return json;
+    }
 
+
+    //1分快3
     public static Request getRequest(String priedNum, String money, String codes){
         RequestBody requestBody = RequestBody.create(getBodyString(priedNum, money, codes), MediaType.parse("application/json"));
 
@@ -51,12 +63,15 @@ public class RequestWrap {
 
     //获取余额
     public static Request getBanlanceRequest(String userName ){
-        String body = "{\"userName\":\"" + userName + "\",\"device\":1,\"encryKey\":\"1607944496194521581691192194\",\"encryValue\":\"cd6ceeb06684ba8d9c2f29a6ed3cfc14\"}";
+        String body = "{\"userName\":\"" + "userName" + "\",\"device\":1,\"encryKey\":\"1607944496194521581691192194\",\"encryValue\":\"cd6ceeb06684ba8d9c2f29a6ed3cfc14\"}";
         RequestBody requestBody = RequestBody.create(body, MediaType.parse("application/json"));
 
+        String url = "http://88ac18.com/tools/_ajax//getUserBanlance";
+        //String url = "http://192.168.123.151:8080/OkHttpServer_war/GetBalance";
+
+
         Request request = new Request.Builder()
-                //http://192.168.123.151:8080/OkHttpServer_war/GetBalance
-                .url("http://88ac18.com/tools/_ajax//getUserBanlance")//"http://88ac18.com/tools/_ajax//getUserBanlance"
+                .url(url)//"http://88ac18.com/tools/_ajax//getUserBanlance"
                 .addHeader("cookie", UserInfo.getCookie())
                 .addHeader("user-agent", "Mozilla/5.0 (Linux; Android 10; MI 9 SE Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.101 Mobile Safari/537.36 acgapp")
                 .addHeader("Origin", "http://88ac18.com")
@@ -68,4 +83,22 @@ public class RequestWrap {
     }
 
 
+    //极速快3
+    public static Request getRequestFast( String money, String codes) {
+        String url = "http://88ac18.com/tools/_ajax/K3MMC/betSingle";
+        //String url = "http://192.168.123.151:8080/OkHttpServer_war/FastBetting";
+
+        RequestBody requestBody = RequestBody.create(getBodyFast( money, codes), MediaType.parse("application/json"));
+
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("cookie", UserInfo.getCookie())
+                .addHeader("user-agent", "Mozilla/5.0 (Linux; Android 10; MI 9 SE Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.101 Mobile Safari/537.36 acgapp")
+                .addHeader("Origin", "http://88ac18.com")
+                .addHeader("Referer", "http://88ac18.com/lottery/K3/K3MMC")
+                .post(requestBody)
+                .build();
+
+        return request;
+    }
 }

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.WebViewTest" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimary">#5E5C60</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
@@ -13,4 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <drawable name="fram">@drawable/ed_view_night</drawable>
+    <color name="textViewColor">@color/white</color>
+    <drawable name="night">@drawable/ic_baseline_wb_sunny_24</drawable>
 </resources>

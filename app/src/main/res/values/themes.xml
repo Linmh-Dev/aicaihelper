@@ -13,4 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <drawable name="fram">@drawable/ed_view</drawable>
+    <color name="textViewColor">@color/black</color>
+    <drawable name="night">@drawable/ic_baseline_bedtime_24</drawable>
 </resources>

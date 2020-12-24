@@ -12,10 +12,13 @@ public class InitApplication extends Application {
         String cookie = DatabaseUtils.getString("cookie");
         String playMode = DatabaseUtils.getString("playMode");
         String money = DatabaseUtils.getString("money");
+        String name = DatabaseUtils.getString("userName");
+
 
        // Log.e("lin", userId + "--\n" + cookie + "\n" + playMode + "\n" + money + "");
 
         UserInfo.setMoney(money);
+        UserInfo.setUserName(name);
         UserInfo.setMode(playMode);
         UserInfo.setId(userId);
         UserInfo.setCookie(cookie);

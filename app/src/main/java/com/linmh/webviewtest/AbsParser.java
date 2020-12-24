@@ -38,9 +38,7 @@ public abstract class AbsParser {
     // 3 表示单， 2 表示双
     protected int houdui(int a, int b, int c) {
         int sum = (a + b + c) % 2;
-        if (a == b) {
-            return -1;
-        } else if (b == 1 && c == 1 && sum == 1) {
+       if (b == 1 && c == 1 && sum == 1) {
             return 2;
         } else if (b == 1 && c == 1 && sum == 0) {
             return 3;
@@ -84,30 +82,7 @@ public abstract class AbsParser {
 
     public abstract int mode(int a, int b, int c);
 
-    public int judge(String curr, int a, int b, int c) {
-       /* int ans = mode(a, b, c);
-        HistoryData.setCurrent(curr, ans);
-        Integer prePried = HistoryData.getPrePried(curr);
-        if (prePried == -100) {
-            return "出错";
-            //没有前一期
-        }
-
-        if (ans == prePried && prePried!=-1) {
-            //中奖
-
-                BuyList.restart();
-
-            Log.e("lin", curr+"中奖");
-            return translator(mode(a, b, c));
-        } else {
-            //不中
-
-                BuyList.add();
-
-            Log.e("lin", curr+"不中");
-            return translator(prePried);
-        }*/
+    public int judge( int a, int b, int c) {
 
         String kkk = analyze(a, b, c);
         int zzz = HistoryData.getZzz();
@@ -120,7 +95,6 @@ public abstract class AbsParser {
             data = mode(a, b, c);
             //t = data;
             HistoryData.setCurrent(data);
-            Log.e("lin", "111");
 
         }else if (kkk.contains(translator(t))) {
             //zzz = 0;
@@ -128,19 +102,19 @@ public abstract class AbsParser {
 
             data = mode(a, b, c);
             HistoryData.setCurrent(data);
-            Log.e("lin", "222");
+
             BuyList.restart();
         } else if (!kkk.contains(translator(t)) && zzz == 0) {
             HistoryData.setZzz(HistoryData.getZzz()+1);
             data = t;
-            Log.e("lin", "333");
+
             BuyList.add();
         } else if (!kkk.contains(translator(t)) && zzz == 1) {
             //zzz = 0;
             HistoryData.setZzz(0);
             data = mode(a, b, c);
             HistoryData.setCurrent(data);
-            Log.e("lin", "333");
+
             BuyList.add();
         }
 

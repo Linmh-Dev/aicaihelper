@@ -5,6 +5,9 @@ public class UserInfo {
     //JSESSIONID=C6D67BB09D6DE98009DD091D6BA154CA
     public static String cookie = "";
 
+    public static boolean isNight = false;
+    public static String url = "https://m.124308.com/login";
+
     //限定余额
     public static String money;
 
